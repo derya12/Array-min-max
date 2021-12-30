@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class yakinlik {
+    public static void main(String[] args) {
+        int[] list={34,32,90,78,65,98,2,12,35,69,88};
+        Arrays.sort(list);
+        System.out.println(Arrays.toString(list));
+        int k=list[0];
+        int l=list[0];
+        Scanner inp=new Scanner(System.in);
+        System.out.println("Bir Değer Giriniz:");
+        int x=inp.nextInt();
+        for (int i:list){
+             int a=Math.abs(x-i);
+            if (x>a && k<x ){
+                k=i;
+            }
+            if (x<a && l>x|| x>i) {
+                l = i;
+            }
+        }
+        System.out.println("Sayıdan büyük en yakın sayı:"+k);
+        System.out.println("Sayıdan küçük en yakın sayı:"+l);
+    }
+}
